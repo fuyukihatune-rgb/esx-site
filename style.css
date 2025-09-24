@@ -1,0 +1,13 @@
+:root { --bg:#f0f6fb; --ink:#0f172a; --muted:#374151; --line:#cbd5e1; --accent:#3b82f6; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0b0b10; --ink:#e8eaf0; --muted:#9aa3b2; --line:#2a2f3a; --accent:#60a5fa; } }
+body { background: var(--bg); color: var(--ink); font-family: system-ui, sans-serif; margin:0; line-height:1.8; }
+header { background: var(--bg); border-bottom:1px solid var(--line); }
+.masthead { max-width:900px; margin:0 auto; padding:1rem; }
+.brand { font-size:1.6rem; font-weight:900; white-space:nowrap; }
+main { max-width:900px; margin:2rem auto; padding:0 1rem; }
+.section { border:1px solid var(--line); padding:1rem; margin:1rem 0; border-radius:10px; background: rgba(255,255,255,0.5); }
+.hero .site-title { font-size:2rem; margin:0; }
+.kicker { color: var(--muted); margin-bottom:1rem; }
+.quote { background: rgba(0,0,0,.05); padding:1rem; border-left:3px solid var(--accent); border-radius:6px; }
+footer { border-top:1px solid var(--line); color:var(--muted); padding:1rem; text-align:center; }
+.mono { font-family: ui-monospace, monospace; }
