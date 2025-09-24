@@ -3,8 +3,109 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow" />
   <title>Empowerment Society X｜公式サイト</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="ESX（Empowerment Society X）は“守る言論”を掲げる言論団体です。理性・透明性・合法性を大切に、小さな声と尊厳を守ります。">
+  <style>
+    /* ===== Theme tokens ===== */
+    :root{
+      --bg:#f0f6fb; --ink:#0f172a; --muted:#475569; --line:#cbd5e1; --accent:#3b82f6;
+      --card: color-mix(in oklab, var(--bg), #fff 6%);
+      --card-ink: var(--ink);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b0b10; --ink:#e8eaf0; --muted:#9aa3b2; --line:#2a2f3a; --accent:#60a5fa;
+        --card: color-mix(in oklab, var(--bg), #fff 3%);
+      }
+    }
+
+    /* ===== Base ===== */
+    html,body{margin:0;padding:0}
+    body{
+      background:
+        radial-gradient(900px 600px at 50% -10%, rgba(59,130,246,.10), transparent 55%),
+        radial-gradient(800px 600px at 0% 100%, rgba(59,130,246,.06), transparent 50%),
+        var(--bg);
+      color:var(--ink);
+      font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",sans-serif;
+      line-height:1.8;
+      -webkit-text-size-adjust:100%;
+      text-rendering:optimizeLegibility;
+    }
+    main{max-width:900px;margin:7vh auto;padding:0 20px}
+
+    /* ===== Header ===== */
+    header{
+      position:sticky;top:0;z-index:10;
+      background:color-mix(in oklab, var(--bg), #fff 30%);
+      backdrop-filter:saturate(1.1) blur(6px);
+      border-bottom:1px solid var(--line);
+    }
+    .masthead{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:1rem;max-width:900px;margin:0 auto;padding:.9rem 20px
+    }
+    .brand{font-weight:900;letter-spacing:.06em;font-size:1.2rem;white-space:nowrap}
+
+    /* ===== Typography & sections ===== */
+    .hero{padding:2.1rem 0 1.1rem}
+    .site-title{font-size:2.2rem;margin:.1rem 0 .5rem 0;font-weight:900;letter-spacing:.01em}
+    .kicker{font-size:1.05rem;color:var(--muted);letter-spacing:.02em;margin:0 0 1rem}
+    @media (max-width:480px){
+      .site-title{font-size:1.8rem}
+      .kicker{font-size:1rem}
+    }
+
+    .section{
+      border:1px solid color-mix(in oklab, var(--ink), transparent 86%);
+      padding:1.05rem;background:var(--card);border-radius:14px;margin:1.1rem 0;color:var(--card-ink)
+    }
+    ul{margin:.6rem 0;padding-left:1.2rem}
+    li{margin:.42rem 0}
+    strong{color:var(--accent)}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* ===== Quote card (mobile tuned) ===== */
+    .quote-card{
+      border-left:4px solid var(--accent);
+      background: color-mix(in oklab, var(--bg), #fff 8%);
+      border-radius:10px; padding:.85rem 1rem; margin:1rem 0;
+    }
+    .quote-card .mark{
+      display:block; color:var(--accent); font-size:1.6rem; line-height:1; margin-bottom:.35rem;
+    }
+    .quote-card p{ margin:0 0 .6rem; font-size:.98rem; line-height:1.7 }
+    .quote-card footer{
+      border-top:1px solid var(--line); padding-top:.45rem; color:var(--muted); font-size:.9rem
+    }
+
+    /* ===== Crypto cards (copyable, mobile-first) ===== */
+    .mono{font-family:ui-monospace,monospace}
+    .crypto-card{
+      display:flex; flex-wrap:wrap; gap:.55rem .8rem; align-items:center;
+      border:1px solid var(--line); border-radius:10px; padding:.8rem; background: color-mix(in oklab, var(--bg), #fff 4%);
+    }
+    .crypto-card h3{margin:.1rem 0; font-size:1rem}
+    .addr{
+      flex:1 1 260px; /* 折り返し領域を確保 */
+      font-size:.95rem; padding:.35rem .5rem;
+      background:color-mix(in oklab, var(--bg), #000 3%);
+      border-radius:6px;
+      white-space:pre-wrap; word-break:break-word; overflow-wrap:anywhere;
+    }
+    .copy{
+      margin-left:auto; padding:.46rem .8rem;
+      border:1px solid var(--line); border-radius:6px; background:#fff0;
+      cursor:pointer; font-size:.9rem
+    }
+    .copy:hover{ background:color-mix(in oklab, var(--accent), transparent 86%) }
+
+    /* ===== Footer ===== */
+    footer{color:var(--muted);border-top:1px solid var(--line);margin-top:2rem}
+    .foot-inner{max-width:900px;margin:0 auto;padding:1rem 20px;display:flex;gap:.8rem;justify-content:space-between;flex-wrap:wrap}
+  </style>
 </head>
 <body>
   <header>
@@ -14,65 +115,101 @@
   </header>
 
   <main>
-    <section class="hero">
+    <!-- Hero -->
+    <section class="hero" aria-label="ヒーロー">
       <h1 class="site-title">守るための言論を、ここから。</h1>
       <p class="kicker">多様な意見が安全に交わる場を広げるために――理性・透明性・合法性を大切に、小さな声と尊厳を守ります。</p>
-      <pre class="quote">「たとえ一人の人間の意見でも、それを黙殺することは、全人類から意見を奪うことと同じである。」 — ジョン・スチュアート・ミル『自由論』</pre>
+
+      <blockquote class="quote-card" aria-label="引用：J.S.ミル">
+        <span class="mark">❝</span>
+        <p>たとえ一人の人間の意見でも、それを黙殺することは、全人類から意見を奪うことと同じである。</p>
+        <footer>— ジョン・スチュアート・ミル『自由論』</footer>
+      </blockquote>
     </section>
 
+    <!-- About -->
     <section class="section" id="about">
       <h2>About</h2>
-      <p><strong>ESX（Empowerment Society X）</strong> は政治団体ではなく、言論・記録・公開の力で健全な対話を支えることを目的とした言論団体です。</p>
-      <p>代表: <a href="https://x.com/nccc1030" target="_blank">@nccc1030</a> ／ 連絡先: <a href="mailto:fuyuki@xdcyw.net">fuyuki@xdcyw.net</a></p>
+      <p><strong>ESX（Empowerment Society X）</strong> は政治団体ではなく、言論・記録・公開の力で健全な対話を支える言論団体です。</p>
+      <p>代表: <a href="https://x.com/nccc1030" target="_blank" rel="noopener">@nccc1030</a> ／ 連絡先: <a href="mailto:fuyuki@xdcyw.net">fuyuki@xdcyw.net</a></p>
     </section>
 
+    <!-- Principles -->
     <section class="section" id="principles">
       <h2>基本原理</h2>
       <ul>
-        <li><strong>自由の尊重</strong> — 誰もが自分の考えを落ち着いて表明できる環境を守ります。</li>
-        <li><strong>責任ある自由</strong> — 他者の権利を侵さず、自由と責任の両立を目指します。</li>
-        <li><strong>透明性</strong> — 発言や編集の経緯を記録し、検証可能性を高めます。</li>
-        <li><strong>健全な議論</strong> — 感情的な煽動ではなく、事実と論理に基づく対話を重視します。</li>
-        <li><strong>法の遵守</strong> — ルールを尊重しつつ、必要な改善は公開の議論で提案します。</li>
-        <li><strong>プライバシーの尊重</strong> — 憲法21条に基づき、必要に応じてVPN/Torの使用を認めます。</li>
-        <li><strong>アドブロックの権利</strong> — 広告を表示しない選択は違法ではなく、利用者の自由です。</li>
+        <li><strong>自由の尊重</strong> — 誰もが落ち着いて意見を表明できる環境を守る。</li>
+        <li><strong>責任ある自由</strong> — 他者の権利を侵さず、自由と責任の両立を図る。</li>
+        <li><strong>透明性</strong> — 発言や編集の経緯を記録し、検証可能性を高める。</li>
+        <li><strong>健全な議論</strong> — 煽動ではなく、事実と論理を重視する。</li>
+        <li><strong>法の遵守</strong> — ルールを尊重し、改善は公開の議論で提案する。</li>
+        <li><strong>プライバシーの尊重</strong> — 憲法上の表現・通信の自由に立脚し、必要に応じて安全技術（VPN / Tor など）の活用を認める。</li>
       </ul>
-      <pre class="quote">「異議申し立てのプロセスこそが、民主主義の正当性を支える。」 — ロバート・A・ダール</pre>
+
+      <blockquote class="quote-card" aria-label="引用：ロバート・A・ダール">
+        <span class="mark">❝</span>
+        <p>異議申し立てのプロセスこそが、民主主義の正当性を支える。</p>
+        <footer>— ロバート・A・ダール</footer>
+      </blockquote>
     </section>
 
-    <section class="section" id="values">
-      <h2>私たちの姿勢</h2>
-      <ul>
-        <li><strong>攻撃より保護</strong> — 過激さではなく、安心して参加できる場を守ります。</li>
-        <li><strong>小さな声の可視化</strong> — 声の大きさに依存せず、当事者の声を丁寧に拾います。</li>
-        <li><strong>オープン編集</strong> — 誤りは素直に正し、更新履歴を残します。</li>
-        <li><strong>アクセシビリティ</strong> — 読みやすさ・使いやすさを重視します。</li>
-        <li><strong>参加の間口</strong> — 実名・匿名を問わず、広く参加できる仕組みを整えます。</li>
-      </ul>
-    </section>
-
-    <section class="section" id="participation">
-      <h2>参加・賛同のお願い</h2>
-      <p>賛同者や寄稿をしてくださる方はぜひご連絡ください。賛同者が増えれば、将来的にコミュニティ立ち上げも視野に入れています。</p>
-    </section>
-
+    <!-- Donation -->
     <section class="section" id="donation">
       <h2>支援（任意）</h2>
-      <p>活動は皆さまの支援で成り立っています。本サイトは<strong>政治団体ではありません</strong>。</p>
+      <p>活動は皆さまの支援で成り立っています。なお本サイトは<strong>政治団体ではありません</strong>。</p>
+
+      <div class="crypto-card">
+        <h3>Bitcoin</h3>
+        <code class="addr mono" id="btc">3LMiALLtbygKqzdHCgfgq8UmQVAsvmiPvN</code>
+        <button class="copy" data-target="btc" aria-label="Bitcoinアドレスをコピー">コピー</button>
+      </div>
+
+      <div class="crypto-card">
+        <h3>Ethereum</h3>
+        <code class="addr mono" id="eth">0x30ADadB8551CF95267Eff67988916C11DF431bF2</code>
+        <button class="copy" data-target="eth" aria-label="Ethereumアドレスをコピー">コピー</button>
+      </div>
+    </section>
+
+    <!-- Privacy (concise) -->
+    <section class="section" id="privacy">
+      <h2>プライバシーポリシー（要旨）</h2>
       <ul>
-        <li>Bitcoin: <code class="mono">3LMiALLtbygKqzdHCgfgq8UmQVAsvmiPvN</code></li>
-        <li>Ethereum: <code class="mono">0x30ADadB8551CF95267Eff67988916C11DF431bF2</code></li>
+        <li>当サイトは Cloudflare 経由で配信し、アクセス状況は匿名化された統計としてのみ確認します。</li>
+        <li>Google アナリティクスは現時点で未導入。導入時は IP 匿名化等を行い、本ポリシーを更新して周知します。</li>
+        <li>お問い合わせ・寄稿で得た個人情報は連絡目的のみに利用し、無断で第三者提供しません。</li>
       </ul>
+      <p class="mono" style="color:var(--muted);font-size:.9rem;margin-top:.4rem">最終更新日: 2025-09-24</p>
     </section>
   </main>
 
   <footer>
     <div class="foot-inner">
       <span>© 2025 Empowerment Society X</span>
-      <span><a href="privacy.html">プライバシーポリシー</a></span>
+      <span><a href="#privacy">プライバシーポリシー</a></span>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // copy buttons (works on mobile browsers that support Clipboard API)
+    document.addEventListener('click', (e)=>{
+      const btn = e.target.closest('.copy');
+      if(!btn) return;
+      const id = btn.dataset.target;
+      const el = document.getElementById(id);
+      if(!el) return;
+      const text = el.textContent.trim();
+      (navigator.clipboard?.writeText
+        ? navigator.clipboard.writeText(text)
+        : new Promise((res, rej)=>{ // fallback
+            const ta = document.createElement('textarea');
+            ta.value = text; document.body.appendChild(ta);
+            ta.select(); try{ document.execCommand('copy'); res(); } catch(_){ rej(); }
+            ta.remove();
+          })
+      ).then(()=>{ btn.textContent='コピー済み'; setTimeout(()=>btn.textContent='コピー',1400); })
+       .catch(()=>{ alert('コピーに失敗しました'); });
+    });
+  </script>
 </body>
 </html>
